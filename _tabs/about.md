@@ -1,5 +1,6 @@
 ---
 # the default layout is 'page'
+title: 정보
 icon: fas fa-info-circle
 order: 1
 ---
