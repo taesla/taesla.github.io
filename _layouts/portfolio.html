@@ -1,0 +1,81 @@
+---
+layout: page
+---
+
+{% assign sorted_posts = site.posts | where_exp: "post", "post.categories contains 'Project'" | sort: 'date' | reverse %}
+
+{% assign year_now = 'nil' %}
+
+{% for post in sorted_posts %}
+  {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  
+  {% if year_now != post_year %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    {% assign year_now = post_year %}
+    <h2 id="{{ post_year }}" class="year">{{ post_year }}</h2>
+    <ul class="list-unstyled">
+  {% endif %}
+  
+  <li>
+    <span class="date">{{ post.date | date: '%m / %d' }}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+  
+  {% if forloop.last %}</ul>{% endif %}
+{% endfor %}
+
+<style>
+.year {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--heading-color);
+}
+
+.year::before {
+  content: "●";
+  color: var(--link-color);
+  margin-right: 0.5rem;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--heading-color);
+  margin-left: 0.5rem;
+}
+
+.list-unstyled li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+.list-unstyled li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--link-color);
+}
+
+.list-unstyled .date {
+  color: var(--text-muted-color);
+  margin-right: 1rem;
+  font-family: monospace;
+}
+
+.list-unstyled a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.list-unstyled a:hover {
+  text-decoration: underline;
+}
+</style>
