@@ -31,6 +31,9 @@ url: "https://taesla.github.io"
 github:
   username: taesla # change to your GitHub username
 
+# GitHub repository for edit link
+repository: taesla/taesla.github.io
+
 twitter:
   username: # change to your Twitter username
 
