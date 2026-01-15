@@ -1,6 +1,6 @@
 ---
 title: "e-코너 모듈 차량 최적 제어 분배 알고리즘 개발"
-date: 2022-12-01 09:00:00 +0900
+date: 2023-01-01 09:00:00 +0900
 categories: [Project, Control]
 tags: [자율주행, 제어, Control Allocation, Vehicle Dynamics, MATLAB, Simulink, CarSim]
 image:

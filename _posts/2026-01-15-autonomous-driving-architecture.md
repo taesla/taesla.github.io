@@ -1,7 +1,7 @@
 ---
 title: 자율주행 시스템 아키텍처 개요
 date: 2026-01-15 13:00:00 +0900
-categories: [Project]
+categories: [Knowledge]
 tags: [자율주행, 아키텍처, perception, planning, control]
 ---
 
