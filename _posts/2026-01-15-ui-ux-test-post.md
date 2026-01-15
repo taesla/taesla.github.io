@@ -145,7 +145,6 @@ git push origin feature/new-feature
 ### 내부 링크
 - [About 페이지](/about/)
 - [Knowledge 페이지](/knowledge/)
-- [Portfolio 페이지](/archives/)
 
 ---
 
